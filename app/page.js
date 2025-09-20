@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-
+// Lazy load components for better performance
 const Hero = dynamic(() => import("@/components/Hero"), {
   loading: () => (
     <div className="min-h-screen flex items-center justify-center">
@@ -7,7 +7,6 @@ const Hero = dynamic(() => import("@/components/Hero"), {
     </div>
   ),
 });
-
 const Skills = dynamic(() => import("@/components/Skills"), {
   loading: () => (
     <div className="py-20 flex items-center justify-center">
@@ -15,7 +14,6 @@ const Skills = dynamic(() => import("@/components/Skills"), {
     </div>
   ),
 });
-
 const Projects = dynamic(() => import("@/components/Projects"), {
   loading: () => (
     <div className="py-20 flex items-center justify-center">
@@ -23,7 +21,6 @@ const Projects = dynamic(() => import("@/components/Projects"), {
     </div>
   ),
 });
-
 const Contact = dynamic(() => import("@/components/Contact"), {
   loading: () => (
     <div className="py-20 flex items-center justify-center">
@@ -31,7 +28,6 @@ const Contact = dynamic(() => import("@/components/Contact"), {
     </div>
   ),
 });
-
 export default function Home() {
   return (
     <div className="overflow-hidden">
