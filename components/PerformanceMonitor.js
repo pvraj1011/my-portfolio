@@ -16,10 +16,12 @@ const PerformanceMonitor = () => {
       observer.observe({ entryTypes: ['measure', 'navigation', 'paint'] })
       
       // Monitor loading time
-      window.addEventListener('load', () => {
-        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart
-        console.log(`Page load time: ${loadTime}ms`)
-      })
+      if (typeof window !== 'undefined') {
+        window.addEventListener('load', () => {
+          const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart
+          console.log(`Page load time: ${loadTime}ms`)
+        })
+      }
       
       return () => observer.disconnect()
     }

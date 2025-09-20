@@ -47,9 +47,12 @@ const Hero = () => {
   };
 
   const scrollToNext = () => {
-    const skillsSection = document.querySelector("#skills");
-    if (skillsSection) {
-      skillsSection.scrollIntoView({ behavior: "smooth" });
+    // Check if we're in the browser
+    if (typeof document !== 'undefined') {
+      const skillsSection = document.querySelector("#skills");
+      if (skillsSection) {
+        skillsSection.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 

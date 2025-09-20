@@ -19,49 +19,55 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
-    };
+    // Check if we're in the browser
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        const isScrolled = window.scrollY > 50;
+        setScrolled(isScrolled);
+      };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
 
   // Prevent body scroll when sidebar is open
   useEffect(() => {
-    if (isOpen) {
-      // Get current scroll position
-      const scrollY = window.scrollY;
+    // Check if we're in the browser
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      if (isOpen) {
+        // Get current scroll position
+        const scrollY = window.scrollY;
 
-      // Disable body scroll and preserve scroll position
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = "100%";
-      document.body.style.overflow = "hidden";
-    } else {
-      // Get the scroll position from the body's top style
-      const scrollY = document.body.style.top;
+        // Disable body scroll and preserve scroll position
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = "100%";
+        document.body.style.overflow = "hidden";
+      } else {
+        // Get the scroll position from the body's top style
+        const scrollY = document.body.style.top;
 
-      // Re-enable body scroll and restore scroll position
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      document.body.style.overflow = "";
+        // Re-enable body scroll and restore scroll position
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflow = "";
 
-      // Restore scroll position
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+        // Restore scroll position
+        if (scrollY) {
+          window.scrollTo(0, parseInt(scrollY || "0") * -1);
+        }
       }
-    }
 
-    // Cleanup function to ensure scroll is re-enabled when component unmounts
-    return () => {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      document.body.style.overflow = "";
-    };
+      // Cleanup function to ensure scroll is re-enabled when component unmounts
+      return () => {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflow = "";
+      };
+    }
   }, [isOpen]);
 
   const navItems = [
@@ -72,9 +78,12 @@ const Navbar = () => {
   ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    // Check if we're in the browser
+    if (typeof document !== 'undefined') {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
     setIsOpen(false);
   };
