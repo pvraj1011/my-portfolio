@@ -9,22 +9,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: FaGithub,
-      href: "https://github.com",
+      href: "https://github.com/pvraj1011",
       label: "GitHub",
     },
     {
       icon: FaLinkedin,
-      href: "https://linkedin.com",
+      href: "https://linkedin.com/in/vraj10",
       label: "LinkedIn",
     },
     {
-      icon: FaTwitter,
-      href: "https://twitter.com",
-      label: "Twitter",
-    },
-    {
       icon: FaEnvelope,
-      href: "mailto:your.email@example.com",
+      href: "mailto:p.vraj2110@gmail.com",
       label: "Email",
     },
   ];
@@ -73,7 +68,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-4 text-center sm:text-left"
           >
-            <h4 className="text-lg font-semibold text-text">Quick Links</h4>
+            <h4 className="text-2xl font-bold gradient-text">Quick Links</h4>
             <ul className="space-y-2">
               {[
                 { name: "About", href: "#home" },
@@ -101,14 +96,14 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-4 text-center sm:text-left"
           >
-            <h4 className="text-lg font-semibold text-text">Get In Touch</h4>
+            <h4 className="text-2xl font-bold gradient-text">Get In Touch</h4>
             <div className="space-y-2 text-gray-600">
-              <p>📧 your.email@example.com</p>
-              <p>📱 +1 (555) 123-4567</p>
-              <p>📍 Your City, Country</p>
+              <p>📧 p.vraj2110@gmail.com</p>
+              <p>📱 +91 8140396725</p>
+              <p>📍 Ahmedabad, India</p>
             </div>
             <motion.a
-              href="mailto:your.email@example.com"
+              href="mailto:p.vraj2110@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg transition-colors duration-200"

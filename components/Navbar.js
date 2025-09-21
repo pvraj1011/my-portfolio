@@ -80,10 +80,19 @@ const Navbar = () => {
   const scrollToSection = (href) => {
     // Check if we're in the browser
     if (typeof document !== "undefined") {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      // Add a small delay to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest",
+          });
+        } else {
+          console.warn(`Element with selector "${href}" not found`);
+        }
+      }, 100);
     }
     setIsOpen(false);
   };
@@ -129,7 +138,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-700 hover:text-primary-600 transition-colors"
+              className="text-gray-700 hover:text-gray-800 transition-colors"
             >
               <FaGithub size={20} />
             </motion.a>
@@ -243,14 +252,10 @@ const Navbar = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ x: 10, scale: 1.02 }}
-                    className="flex items-center gap-4 w-full text-left p-4 rounded-xl hover:bg-gray-100 hover:shadow-md transition-all duration-200 group"
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center w-full text-left p-4 rounded-xl hover:bg-primary-50 hover:border-primary-200 border-2 border-transparent transition-all duration-200 active:bg-primary-100"
                   >
-                    {/* <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <span className="text-white text-sm font-bold">
-                        {item.name.charAt(0)}
-                      </span>
-                    </div> */}
-                    <span className="text-gray-700 font-medium group-hover:text-gray-800 transition-colors">
+                    <span className="text-gray-700 font-medium group-hover:text-primary-700 transition-colors">
                       {item.name}
                     </span>
                   </motion.button>
@@ -295,19 +300,19 @@ const Navbar = () => {
                   {[
                     {
                       icon: FaGithub,
-                      href: "https://github.com",
+                      href: "https://github.com/pvraj1011",
                       color: "bg-gray-800",
                       textColor: "text-white",
                     },
                     {
                       icon: FaLinkedin,
-                      href: "https://linkedin.com",
+                      href: "https://linkedin.com/in/vraj10",
                       color: "bg-blue-800",
                       textColor: "text-white",
                     },
                     {
                       icon: FaInstagram,
-                      href: "https://instagram.com",
+                      href: "https://instagram.com/v_i_r_u_1011",
                       color: "bg-pink-600",
                       textColor: "text-white",
                     },

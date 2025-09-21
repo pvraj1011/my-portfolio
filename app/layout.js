@@ -12,7 +12,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'Portfolio - Your Name',
+  title: 'VRAJ PATEL | Code & Creativity',
   description: 'A modern portfolio website showcasing skills, projects, and experience',
 }
 
