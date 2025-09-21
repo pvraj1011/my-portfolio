@@ -20,7 +20,7 @@ const Navbar = () => {
 
   useEffect(() => {
     // Check if we're in the browser
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const handleScroll = () => {
         const isScrolled = window.scrollY > 50;
         setScrolled(isScrolled);
@@ -34,7 +34,7 @@ const Navbar = () => {
   // Prevent body scroll when sidebar is open
   useEffect(() => {
     // Check if we're in the browser
-    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
       if (isOpen) {
         // Get current scroll position
         const scrollY = window.scrollY;
@@ -79,7 +79,7 @@ const Navbar = () => {
 
   const scrollToSection = (href) => {
     // Check if we're in the browser
-    if (typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -102,7 +102,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
-            <span className="text-2xl font-bold gradient-text">Portfolio</span>
+            <span className="text-2xl font-bold gradient-text">VP</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -129,7 +129,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-gray-700 hover:text-primary-600 transition-colors"
             >
               <FaGithub size={20} />
             </motion.a>
@@ -138,7 +138,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-400 hover:text-primary-400 transition-colors"
+              className="text-gray-700 hover:text-primary-600 transition-colors"
             >
               <FaLinkedin size={20} />
             </motion.a>
@@ -147,7 +147,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-600 hover:text-secondary-500 transition-colors"
+              className="text-gray-700 hover:text-secondary-500 transition-colors"
             >
               <FaInstagram size={20} />
             </motion.a>
@@ -156,7 +156,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-400 hover:text-blue-500 transition-colors"
+              className="text-gray-700 hover:text-orange-500 transition-colors"
             >
               <SiCredly size={20} />
             </motion.a>
@@ -165,7 +165,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-400 hover:text-blue-600 transition-colors"
+              className="text-gray-700 hover:text-blue-500 transition-colors"
             >
               <SiCoursera size={20} />
             </motion.a>
@@ -208,11 +208,15 @@ const Navbar = () => {
               {/* Sidebar Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+                  {/* <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-lg">V</span>
-                  </div>
+                  </div> */}
                   <div>
-                    <h2 className="font-bold text-text">VRAJ PATEL</h2>
+                    {/* <h2 className="font-bold text-text">VRAJ</h2> */}
+                    <h1 className="gradient-text font-bold text-2xl bg-clip-text">
+                      Vraj Patel
+                    </h1>
+
                     {/* <p className="text-sm text-gray-600">Navigation</p> */}
                   </div>
                 </div>
@@ -228,9 +232,9 @@ const Navbar = () => {
 
               {/* Navigation Links */}
               <div className="p-6 space-y-2">
-                <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4">
+                {/* <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4">
                   Menu
-                </h3>
+                </h3> */}
                 {navItems.map((item, index) => (
                   <motion.button
                     key={item.name}
@@ -241,12 +245,12 @@ const Navbar = () => {
                     whileHover={{ x: 10, scale: 1.02 }}
                     className="flex items-center gap-4 w-full text-left p-4 rounded-xl hover:bg-gray-100 hover:shadow-md transition-all duration-200 group"
                   >
-                    <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    {/* <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                       <span className="text-white text-sm font-bold">
                         {item.name.charAt(0)}
                       </span>
-                    </div>
-                    <span className="text-gray-700 font-medium group-hover:text-primary-600 transition-colors">
+                    </div> */}
+                    <span className="text-gray-700 font-medium group-hover:text-gray-800 transition-colors">
                       {item.name}
                     </span>
                   </motion.button>
@@ -264,7 +268,7 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex items-center gap-3 p-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-colors"
+                    className="flex items-center gap-3 p-3 bg-gray-600 text-white rounded-xl hover:bg-gray-700 transition-colors"
                   >
                     <FaEnvelope size={18} />
                     <span className="font-medium">Get in Touch</span>
@@ -292,27 +296,32 @@ const Navbar = () => {
                     {
                       icon: FaGithub,
                       href: "https://github.com",
-                      color: "hover:bg-gray-800",
+                      color: "bg-gray-800",
+                      textColor: "text-white",
                     },
                     {
                       icon: FaLinkedin,
                       href: "https://linkedin.com",
-                      color: "hover:bg-blue-600",
+                      color: "bg-blue-800",
+                      textColor: "text-white",
                     },
                     {
                       icon: FaInstagram,
                       href: "https://instagram.com",
-                      color: "hover:bg-pink-600",
+                      color: "bg-pink-600",
+                      textColor: "text-white",
                     },
                     {
                       icon: SiCredly,
                       href: "https://credly.com/users/vraj10",
-                      color: "hover:bg-orange-500",
+                      color: "bg-orange-500",
+                      textColor: "text-white",
                     },
                     {
                       icon: SiCoursera,
                       href: "https://coursera.org/learner/vraj10",
-                      color: "hover:bg-blue-600",
+                      color: "bg-blue-600",
+                      textColor: "text-white",
                     },
                   ].map((social, index) => (
                     <motion.a
@@ -325,7 +334,7 @@ const Navbar = () => {
                       transition={{ delay: 0.5 + index * 0.1 }}
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.9 }}
-                      className={`p-3 bg-gray-100 text-gray-700 ${social.color} text-white rounded-xl transition-all duration-200 flex items-center justify-center`}
+                      className={`p-3 ${social.color} ${social.textColor} rounded-xl transition-all duration-200 flex items-center justify-center shadow-md hover:shadow-lg`}
                     >
                       <social.icon size={20} />
                     </motion.a>

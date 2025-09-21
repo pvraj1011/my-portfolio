@@ -206,7 +206,7 @@ const Skills = () => {
                       whileHover={{ scale: 1.1, rotate: 10 }}
                       className={`${skill.color} transition-transform duration-200 w-full h-full rounded-lg bg-white flex items-center justify-center`}
                     >
-                      <skill.icon size={28} />
+                      <skill.icon size={40} />
                     </motion.div>
 
                     {/* Tooltip on hover */}

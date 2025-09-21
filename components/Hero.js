@@ -7,6 +7,7 @@ import { HiSparkles } from "react-icons/hi2";
 
 const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0);
+  
   const roles = [
     "Full Stack Developer",
     "React Specialist",
@@ -16,12 +17,12 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    // Reduce frequency of role changes for better performance
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 4000); // Increased from 3000 to 4000ms
+    }, 3000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [roles]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -160,7 +161,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 className="inline-block text-primary-600 font-semibold"
               >
                 {roles[currentRole]}

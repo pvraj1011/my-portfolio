@@ -1,13 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaEnvelope,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,17 +9,22 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: FaGithub,
-      href: "https://github.com/pvraj1011",
+      href: "https://github.com",
       label: "GitHub",
     },
     {
       icon: FaLinkedin,
-      href: "https://linkedin.com/in/vraj10",
+      href: "https://linkedin.com",
       label: "LinkedIn",
     },
     {
+      icon: FaTwitter,
+      href: "https://twitter.com",
+      label: "Twitter",
+    },
+    {
       icon: FaEnvelope,
-      href: "mailto:p.vraj2110@gmail.com",
+      href: "mailto:your.email@example.com",
       label: "Email",
     },
   ];
@@ -33,20 +32,20 @@ const Footer = () => {
   return (
     <footer className="bg-gray-50 text-gray-900 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-4 text-center sm:text-left"
           >
             <h3 className="text-2xl font-bold gradient-text">Portfolio</h3>
             <p className="text-gray-600 leading-relaxed">
               A passionate developer creating innovative solutions and bringing
               ideas to life through code.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center sm:justify-start space-x-4">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={social.label}
@@ -72,7 +71,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-4 text-center sm:text-left"
           >
             <h4 className="text-lg font-semibold text-text">Quick Links</h4>
             <ul className="space-y-2">
@@ -86,7 +85,7 @@ const Footer = () => {
                   <motion.a
                     href={link.href}
                     whileHover={{ x: 5 }}
-                    className="text-gray-600 hover:text-primary-600 transition-colors duration-200"
+                    className="text-gray-600 hover:text-primary-600 transition-colors duration-200 block"
                   >
                     {link.name}
                   </motion.a>
@@ -100,16 +99,16 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-4"
+            className="space-y-4 text-center sm:text-left"
           >
             <h4 className="text-lg font-semibold text-text">Get In Touch</h4>
             <div className="space-y-2 text-gray-600">
-              <p>📧 p.vraj2110@gmail.com</p>
-              <p>📱 +91 8140396725</p>
-              <p>📍 Ahmedabad, India</p>
+              <p>📧 your.email@example.com</p>
+              <p>📱 +1 (555) 123-4567</p>
+              <p>📍 Your City, Country</p>
             </div>
             <motion.a
-              href="mailto:p.vraj2110@gmail.com"
+              href="mailto:your.email@example.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg transition-colors duration-200"
@@ -126,8 +125,8 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="border-t border-gray-300 mt-8 pt-8 text-center"
         >
-          <p className="text-gray-500">
-            © {currentYear} Vraj Patel. All rights reserved. Built with ❤️ using
+          <p className="text-gray-500 text-sm sm:text-base">
+            © {currentYear} Your Name. All rights reserved. Built with ❤️ using
             Next.js
           </p>
         </motion.div>

@@ -1,101 +1,100 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import {
-  FaEnvelope,
-  FaPhone,
-  FaMapMarkerAlt,
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-} from "react-icons/fa";
-import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaTelegram } from 'react-icons/fa'
+import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
 
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
-  });
+    threshold: 0.1
+  })
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+      [e.target.name]: e.target.value
+    })
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
+    e.preventDefault()
+    setIsSubmitting(true)
+    
     // Simulate form submission
     setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-
+      setIsSubmitting(false)
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      
       // Reset status after 3 seconds
       setTimeout(() => {
-        setSubmitStatus(null);
-      }, 3000);
-    }, 2000);
-  };
+        setSubmitStatus(null)
+      }, 3000)
+    }, 2000)
+  }
 
   const contactInfo = [
     {
       icon: HiMail,
-      title: "Email",
-      value: "p.vraj2110@gmail.com",
-      link: "mailto:p.vraj2110@gmail.com",
-      color: "text-red-500",
+      title: 'Email',
+      value: 'your.email@example.com',
+      link: 'mailto:your.email@example.com',
+      color: 'text-red-500'
     },
     {
       icon: HiPhone,
-      title: "Phone",
-      value: "+91 8140396725",
-      link: "tel:+918140396725",
-      color: "text-green-500",
+      title: 'Phone',
+      value: '+1 (555) 123-4567',
+      link: 'tel:+15551234567',
+      color: 'text-green-500'
     },
     {
       icon: HiLocationMarker,
-      title: "Location",
-      value: "Ahmedabad, India",
-      link: "#",
-      color: "text-blue-500",
-    },
-  ];
+      title: 'Location',
+      value: 'Your City, Country',
+      link: '#',
+      color: 'text-blue-500'
+    }
+  ]
 
   const socialLinks = [
     {
       icon: FaGithub,
-      href: "https://github.com/pvraj1011",
-      label: "GitHub",
-      color: "hover:text-gray-800",
+      href: 'https://github.com',
+      label: 'GitHub',
+      color: 'hover:text-gray-800'
     },
     {
       icon: FaLinkedin,
-      href: "https://linkedin.com/in/vraj10",
-      label: "LinkedIn",
-      color: "hover:text-blue-600",
+      href: 'https://linkedin.com',
+      label: 'LinkedIn',
+      color: 'hover:text-blue-600'
     },
     {
-      icon: FaInstagram,
-      href: "https://instagram.com/v_i_r_u_1011",
-      label: "Instagram",
-      color: "hover:text-blue-400",
+      icon: FaTwitter,
+      href: 'https://twitter.com',
+      label: 'Twitter',
+      color: 'hover:text-blue-400'
     },
-  ];
+    {
+      icon: FaTelegram,
+      href: 'https://t.me',
+      label: 'Telegram',
+      color: 'hover:text-blue-500'
+    }
+  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -103,10 +102,10 @@ const Contact = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
+        delayChildren: 0.2
+      }
+    }
+  }
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -115,10 +114,10 @@ const Contact = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
+        ease: "easeOut"
+      }
+    }
+  }
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -140,8 +139,7 @@ const Contact = () => {
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
           >
-            Ready to work together? Let's discuss your next project and bring
-            your ideas to life.
+            Ready to work together? Let's discuss your next project and bring your ideas to life.
           </motion.p>
         </motion.div>
 
@@ -158,9 +156,9 @@ const Contact = () => {
                 Let's Connect
               </h3>
               <p className="text-gray-600 leading-relaxed mb-8">
-                I'm always interested in new opportunities and exciting
-                projects. Whether you have a question, want to collaborate, or
-                just want to say hi, feel free to reach out!
+                I'm always interested in new opportunities and exciting projects. 
+                Whether you have a question, want to collaborate, or just want to say hi, 
+                feel free to reach out!
               </p>
             </motion.div>
 
@@ -177,9 +175,7 @@ const Contact = () => {
                     <info.icon size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">
-                      {info.title}
-                    </h4>
+                    <h4 className="font-semibold text-gray-900">{info.title}</h4>
                     <p className="text-gray-600">{info.value}</p>
                   </div>
                 </motion.a>
@@ -210,7 +206,7 @@ const Contact = () => {
             </motion.div>
 
             {/* Quick Stats */}
-            <motion.div
+            <motion.div 
               variants={itemVariants}
               className="grid grid-cols-2 gap-4 mt-8"
             >
@@ -240,15 +236,9 @@ const Contact = () => {
             </motion.h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <motion.div
-                variants={itemVariants}
-                className="grid grid-cols-1 md:grid-cols-2 gap-6"
-              >
+              <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Name *
                   </label>
                   <input
@@ -263,10 +253,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email *
                   </label>
                   <input
@@ -283,10 +270,7 @@ const Contact = () => {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                   Subject *
                 </label>
                 <input
@@ -302,10 +286,7 @@ const Contact = () => {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Message *
                 </label>
                 <textarea
@@ -328,8 +309,8 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 ${
                   isSubmitting
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-xl"
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-xl'
                 }`}
               >
                 {isSubmitting ? (
@@ -338,12 +319,12 @@ const Contact = () => {
                     Sending...
                   </div>
                 ) : (
-                  "Send Message"
+                  'Send Message'
                 )}
               </motion.button>
 
               {/* Success Message */}
-              {submitStatus === "success" && (
+              {submitStatus === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -368,11 +349,10 @@ const Contact = () => {
               Ready to Start Your Project?
             </h3>
             <p className="text-lg mb-6 opacity-90">
-              Let's create something amazing together. I'm here to help bring
-              your vision to life.
+              Let's create something amazing together. I'm here to help bring your vision to life.
             </p>
             <motion.a
-              href="mailto:p.vraj2110@gmail.com"
+              href="mailto:your.email@example.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
@@ -383,7 +363,7 @@ const Contact = () => {
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
