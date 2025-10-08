@@ -1,147 +1,174 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { FaGithub, FaExternalLinkAlt, FaTimes, FaEye } from 'react-icons/fa'
-import { SiNextdotjs, SiReact, SiNodedotjs, SiMongodb, SiTailwindcss, SiTypescript } from 'react-icons/si'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { FaGithub, FaExternalLinkAlt, FaTimes, FaEye } from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiReact,
+  SiNodedotjs,
+  SiMongodb,
+  SiTailwindcss,
+  SiTypescript,
+  SiPython,
+  SiStreamlit,
+} from "react-icons/si";
 
 const Projects = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all')
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedProject, setSelectedProject] = useState(null);
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
-  })
+    threshold: 0.1,
+  });
 
-  const categories = ['all', 'frontend', 'backend', 'fullstack', 'mobile']
+  const categories = ["all", "ai", "frontend", "backend", "fullstack"];
 
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform with user authentication, payment integration, and admin dashboard.',
-      longDescription: 'This comprehensive e-commerce platform features a modern React frontend with Next.js, secure user authentication, integrated payment processing with Stripe, real-time inventory management, and a complete admin dashboard for order and product management.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-      category: 'fullstack',
-      technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Stripe'],
+      title: "E-Commerce Platform",
+      description:
+        "A full-stack e-commerce platform with user authentication, payment integration, and admin dashboard.",
+      longDescription:
+        "This comprehensive e-commerce platform features a modern React frontend with Next.js, secure user authentication, integrated payment processing with Stripe, real-time inventory management, and a complete admin dashboard for order and product management.",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      category: "fullstack",
+      technologies: ["React", "Next.js", "Node.js", "MongoDB", "Stripe"],
       icons: [SiReact, SiNextdotjs, SiNodedotjs, SiMongodb],
-      github: 'https://github.com',
-      live: 'https://example.com',
+      github: "https://github.com",
+      live: "https://example.com",
       features: [
-        'User authentication & authorization',
-        'Payment processing with Stripe',
-        'Real-time inventory updates',
-        'Admin dashboard',
-        'Responsive design',
-        'SEO optimized'
-      ]
+        "User authentication & authorization",
+        "Payment processing with Stripe",
+        "Real-time inventory updates",
+        "Admin dashboard",
+        "Responsive design",
+        "SEO optimized",
+      ],
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
-      longDescription: 'Built with React and Firebase, this task management app enables teams to collaborate effectively with real-time updates, drag-and-drop functionality, file attachments, and comprehensive project tracking.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
-      category: 'frontend',
-      technologies: ['React', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
-      icons: [SiReact, SiTailwindcss],
-      github: 'https://github.com',
-      live: 'https://example.com',
+      title: "AI Diet & Workout Planner",
+      description:
+        "An intelligent fitness companion that generates personalized meal plans and workout routines based on individual goals and preferences.",
+      longDescription:
+        "A comprehensive AI-powered application built with Python and Streamlit that analyzes user profiles including age, weight, fitness goals, dietary preferences, and restrictions to create customized nutrition and exercise plans. The system provides detailed meal breakdowns with calorie tracking, macronutrient distribution, and exercise routines tailored to different fitness levels. Integrated with Google APIs for enhanced functionality and features a modern, responsive interface built with Tailwind CSS and smooth animations using Framer Motion.",
+      image: "https://i.postimg.cc/1XJDqmyx/Screenshot-2025-10-08-122708.png",
+      category: "ai",
+      technologies: ["Python", "Google APIs", "Streamlit", "Machine Learning"],
+      icons: [SiPython, SiStreamlit],
+      github: "https://github.com/pvraj1011/Ai-Diet-Planner",
+      live: "https://ai-diet-planner-10.streamlit.app/",
       features: [
-        'Real-time collaboration',
-        'Drag & drop interface',
-        'File attachments',
-        'Team management',
-        'Progress tracking',
-        'Mobile responsive'
-      ]
+        "AI-powered personalized meal planning",
+        "Customized workout routine generation",
+        "Calorie and macronutrient tracking",
+        "Dietary restriction accommodation",
+        "Goal-based plan optimization",
+        "Mobile-responsive design",
+      ],
     },
     {
       id: 3,
-      title: 'RESTful API Service',
-      description: 'A scalable REST API built with Node.js and Express, featuring authentication, rate limiting, and comprehensive documentation.',
-      longDescription: 'This robust API service provides secure endpoints with JWT authentication, rate limiting, input validation, comprehensive error handling, and auto-generated API documentation using Swagger.',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
-      category: 'backend',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Swagger'],
+      title: "RESTful API Service",
+      description:
+        "A scalable REST API built with Node.js and Express, featuring authentication, rate limiting, and comprehensive documentation.",
+      longDescription:
+        "This robust API service provides secure endpoints with JWT authentication, rate limiting, input validation, comprehensive error handling, and auto-generated API documentation using Swagger.",
+      image:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
+      category: "backend",
+      technologies: ["Node.js", "Express", "MongoDB", "JWT", "Swagger"],
       icons: [SiNodedotjs, SiMongodb],
-      github: 'https://github.com',
-      live: 'https://example.com',
+      github: "https://github.com",
+      live: "https://example.com",
       features: [
-        'JWT authentication',
-        'Rate limiting',
-        'Input validation',
-        'Error handling',
-        'API documentation',
-        'Database optimization'
-      ]
+        "JWT authentication",
+        "Rate limiting",
+        "Input validation",
+        "Error handling",
+        "API documentation",
+        "Database optimization",
+      ],
     },
     {
       id: 4,
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.',
-      longDescription: 'This weather dashboard provides accurate forecasts using multiple weather APIs, interactive maps with weather overlays, detailed analytics, and personalized weather alerts.',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop',
-      category: 'frontend',
-      technologies: ['React', 'TypeScript', 'Chart.js', 'OpenWeather API'],
+      title: "Weather Dashboard",
+      description:
+        "A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
+      longDescription:
+        "This weather dashboard provides accurate forecasts using multiple weather APIs, interactive maps with weather overlays, detailed analytics, and personalized weather alerts.",
+      image:
+        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+      category: "frontend",
+      technologies: ["React", "TypeScript", "Chart.js", "OpenWeather API"],
       icons: [SiReact, SiTypescript],
-      github: 'https://github.com',
-      live: 'https://example.com',
+      github: "https://github.com",
+      live: "https://example.com",
       features: [
-        'Location-based forecasts',
-        'Interactive weather maps',
-        'Weather analytics',
-        'Custom alerts',
-        'Historical data',
-        'Offline support'
-      ]
+        "Location-based forecasts",
+        "Interactive weather maps",
+        "Weather analytics",
+        "Custom alerts",
+        "Historical data",
+        "Offline support",
+      ],
     },
     {
       id: 5,
-      title: 'Social Media Analytics',
-      description: 'A comprehensive social media analytics platform with real-time data visualization and engagement tracking.',
-      longDescription: 'This analytics platform aggregates data from multiple social media platforms, provides real-time insights, engagement tracking, content performance analysis, and customizable reporting dashboards.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      category: 'fullstack',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'D3.js', 'Redis'],
+      title: "Social Media Analytics",
+      description:
+        "A comprehensive social media analytics platform with real-time data visualization and engagement tracking.",
+      longDescription:
+        "This analytics platform aggregates data from multiple social media platforms, provides real-time insights, engagement tracking, content performance analysis, and customizable reporting dashboards.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      category: "fullstack",
+      technologies: ["React", "Node.js", "PostgreSQL", "D3.js", "Redis"],
       icons: [SiReact, SiNodedotjs, SiMongodb],
-      github: 'https://github.com',
-      live: 'https://example.com',
+      github: "https://github.com",
+      live: "https://example.com",
       features: [
-        'Multi-platform integration',
-        'Real-time analytics',
-        'Custom dashboards',
-        'Data visualization',
-        'Automated reports',
-        'Performance optimization'
-      ]
+        "Multi-platform integration",
+        "Real-time analytics",
+        "Custom dashboards",
+        "Data visualization",
+        "Automated reports",
+        "Performance optimization",
+      ],
     },
     {
       id: 6,
-      title: 'Mobile Banking App',
-      description: 'A secure mobile banking application with biometric authentication and real-time transaction monitoring.',
-      longDescription: 'This mobile banking app features secure biometric authentication, real-time transaction processing, account management, bill payments, and comprehensive security monitoring.',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop',
-      category: 'mobile',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'Biometric Auth'],
+      title: "Mobile Banking App",
+      description:
+        "A secure mobile banking application with biometric authentication and real-time transaction monitoring.",
+      longDescription:
+        "This mobile banking app features secure biometric authentication, real-time transaction processing, account management, bill payments, and comprehensive security monitoring.",
+      image:
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+      category: "mobile",
+      technologies: ["React Native", "Node.js", "MongoDB", "Biometric Auth"],
       icons: [SiReact, SiNodedotjs, SiMongodb],
-      github: 'https://github.com',
-      live: 'https://example.com',
+      github: "https://github.com",
+      live: "https://example.com",
       features: [
-        'Biometric authentication',
-        'Real-time transactions',
-        'Account management',
-        'Bill payments',
-        'Security monitoring',
-        'Push notifications'
-      ]
-    }
-  ]
+        "Biometric authentication",
+        "Real-time transactions",
+        "Account management",
+        "Bill payments",
+        "Security monitoring",
+        "Push notifications",
+      ],
+    },
+  ];
 
-  const filteredProjects = selectedCategory === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory)
+  const filteredProjects =
+    selectedCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -149,10 +176,10 @@ const Projects = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  }
+        delayChildren: 0.2,
+      },
+    },
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -161,10 +188,10 @@ const Projects = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  }
+        ease: "easeOut",
+      },
+    },
+  };
 
   const cardVariants = {
     hidden: { scale: 0.8, opacity: 0 },
@@ -173,16 +200,16 @@ const Projects = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
     hover: {
       scale: 1.05,
       transition: {
-        duration: 0.2
-      }
-    }
-  }
+        duration: 0.2,
+      },
+    },
+  };
 
   return (
     <section id="projects" className="py-20 bg-gray-50">
@@ -204,7 +231,8 @@ const Projects = () => {
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
           >
-            Explore my recent work and see how I bring ideas to life through code
+            Explore my recent work and see how I bring ideas to life through
+            code
           </motion.p>
 
           {/* Filter Buttons */}
@@ -220,8 +248,8 @@ const Projects = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 capitalize ${
                   selectedCategory === category
-                    ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? "bg-primary-600 text-white shadow-lg"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
                 {category}
@@ -256,7 +284,7 @@ const Projects = () => {
                     alt={project.title}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    onLoad={(e) => e.target.classList.add('loaded')}
+                    onLoad={(e) => e.target.classList.add("loaded")}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                     <motion.button
@@ -435,7 +463,7 @@ const Projects = () => {
         )}
       </AnimatePresence>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

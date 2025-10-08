@@ -18,7 +18,7 @@ A modern, responsive portfolio website built with Next.js, featuring smooth anim
 - **Animations**: Framer Motion
 - **Icons**: React Icons
 - **Language**: JavaScript
-- **Deployment**: Vercel (recommended)
+- **Deployment**: Vercel
 
 ## 📁 Project Structure
 
@@ -45,24 +45,28 @@ portfolio/
 ## 🎨 Sections
 
 ### 1. Hero Section
+
 - Animated introduction with rotating role titles
 - Call-to-action buttons
 - Floating background elements
 - Scroll indicator
 
 ### 2. Skills Section
+
 - Interactive skill cards with progress bars
 - Categorized by Frontend, Backend, and Tools
 - Animated progress indicators
 - Additional expertise tags
 
 ### 3. Projects Section
+
 - Filterable project gallery
 - Modal views with detailed information
 - Technology tags and live links
 - Responsive grid layout
 
 ### 4. Contact Section
+
 - Contact form with validation
 - Social media links
 - Contact information cards
@@ -71,18 +75,21 @@ portfolio/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ installed
 - npm or yarn package manager
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <your-repo-url>
    cd portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -90,6 +97,7 @@ portfolio/
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    # or
@@ -102,24 +110,29 @@ portfolio/
 ## 📝 Customization
 
 ### Personal Information
+
 Update the following files with your personal information:
 
 1. **Hero Section** (`components/Hero.js`)
+
    - Change name in the main heading
    - Update role titles in the rotating text
    - Modify the description text
 
 2. **Skills Section** (`components/Skills.js`)
+
    - Update skill categories and technologies
    - Modify skill levels (percentages)
    - Add or remove additional expertise tags
 
 3. **Projects Section** (`components/Projects.js`)
+
    - Replace project data with your own projects
    - Update project images, descriptions, and links
    - Modify technologies used
 
 4. **Contact Section** (`components/Contact.js`)
+
    - Update contact information (email, phone, location)
    - Modify social media links
    - Update statistics and achievements
@@ -130,11 +143,13 @@ Update the following files with your personal information:
    - Change copyright information
 
 ### Styling
+
 - **Colors**: Modify the color palette in `tailwind.config.js`
 - **Fonts**: Update font families in the Tailwind config
 - **Animations**: Customize animations in `globals.css`
 
 ### Images
+
 - Replace placeholder images with your own project screenshots
 - Update the hero background or add personal photos
 - Optimize images for web (use WebP format when possible)
@@ -142,11 +157,13 @@ Update the following files with your personal information:
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. Push your code to GitHub
 2. Connect your repository to Vercel
 3. Deploy with one click
 
 ### Other Platforms
+
 - **Netlify**: Connect your GitHub repository
 - **AWS Amplify**: Deploy through the AWS console
 - **DigitalOcean**: Use App Platform for deployment
@@ -154,6 +171,7 @@ Update the following files with your personal information:
 ## 📱 Responsive Design
 
 The portfolio is fully responsive and optimized for:
+
 - **Desktop**: 1200px and above
 - **Tablet**: 768px - 1199px
 - **Mobile**: 320px - 767px
