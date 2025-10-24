@@ -56,7 +56,7 @@ const Projects = () => {
         "An intelligent fitness companion that generates personalized meal plans and workout routines based on individual goals and preferences.",
       longDescription:
         "A comprehensive AI-powered application built with Python and Streamlit that analyzes user profiles including age, weight, fitness goals, dietary preferences, and restrictions to create customized nutrition and exercise plans. The system provides detailed meal breakdowns with calorie tracking, macronutrient distribution, and exercise routines tailored to different fitness levels. Integrated with Google APIs for enhanced functionality and features a modern, responsive interface built with Tailwind CSS and smooth animations using Framer Motion.",
-      image: "https://i.postimg.cc/1XJDqmyx/Screenshot-2025-10-08-122708.png",
+      image: "https://i.postimg.cc/RFyhbNp1/AI-DIET-PLANNER.png",
       category: "ai",
       technologies: ["Python", "Google APIs", "Streamlit", "Machine Learning"],
       icons: [SiPython, SiStreamlit],
