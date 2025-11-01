@@ -28,11 +28,19 @@ const Contact = dynamic(() => import("@/components/Contact"), {
     </div>
   ),
 });
+const Experience = dynamic(() => import("@/components/Experience"), {
+  loading: () => (
+    <div className="py-20 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+    </div>
+  ),
+});
 export default function Home() {
   return (
     <div className="overflow-hidden">
       <Hero />
       <Skills />
+      <Experience />
       <Projects />
       <Contact />
     </div>
