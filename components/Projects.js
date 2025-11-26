@@ -23,7 +23,7 @@ const Projects = () => {
     threshold: 0.1,
   });
 
-  const categories = ["ALL", "AI", "FRONTEND", "BACKEND", "FULLSTACK"];
+  const categories = ["all", "ai", "frontend", "backend", "fullstack"];
 
   const projects = [
     {
@@ -34,7 +34,7 @@ const Projects = () => {
       longDescription:
         "A comprehensive AI-powered application built with Python and Streamlit that analyzes user profiles including age, weight, fitness goals, dietary preferences, and restrictions to create customized nutrition and exercise plans. The system provides detailed meal breakdowns with calorie tracking, macronutrient distribution, and exercise routines tailored to different fitness levels. Integrated with Google APIs for enhanced functionality and features a modern, responsive interface built with Tailwind CSS and smooth animations using Framer Motion.",
       image: "https://i.postimg.cc/RFyhbNp1/AI-DIET-PLANNER.png",
-      category: "AI",
+      category: "ai",
       technologies: ["Python", "Google APIs", "Streamlit", "Machine Learning"],
       icons: [SiPython, SiStreamlit],
       github: "https://github.com/pvraj1011/Ai-Diet-Planner",
@@ -167,7 +167,7 @@ const Projects = () => {
   ];
 
   const filteredProjects =
-    selectedCategory === "ALL"
+    selectedCategory === "all"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
 
@@ -247,7 +247,7 @@ const Projects = () => {
                 onClick={() => setSelectedCategory(category)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 uppercase ${
                   selectedCategory === category
                     ? "bg-white text-black shadow-lg"
                     : "bg-zinc-800 text-gray-200 hover:bg-zinc-700 border border-zinc-700"
