@@ -11,6 +11,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { SiCredly, SiCoursera } from "react-icons/si";
+import Link from "next/link";
 
 const Navbar = () => {
   const currentYear = new Date().getFullYear();
@@ -72,9 +73,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Certificates", href: "#certificates" },
+    { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -100,19 +102,21 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-200"
-          : "bg-transparent"
+          ? "bg-black/50 backdrop-blur-sm border-b border-zinc-800/40"
+          : "bg-black/40 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
-            <span className="text-2xl font-bold gradient-text">VP</span>
+            <span className="text-2xl font-bold gradient-text">
+              <Link href={"#home"}>VP</Link>
+            </span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -124,7 +128,7 @@ const Navbar = () => {
                   onClick={() => scrollToSection(item.href)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </motion.button>
@@ -139,7 +143,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-700 hover:text-gray-800 transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               <FaGithub size={20} />
             </motion.a>
@@ -148,7 +152,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-700 hover:text-primary-600 transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               <FaLinkedin size={20} />
             </motion.a>
@@ -157,7 +161,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-700 hover:text-secondary-500 transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               <FaInstagram size={20} />
             </motion.a>
@@ -166,7 +170,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-700 hover:text-orange-500 transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               <SiCredly size={20} />
             </motion.a>
@@ -175,7 +179,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-gray-700 hover:text-blue-500 transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               <SiCoursera size={20} />
             </motion.a>
@@ -186,7 +190,7 @@ const Navbar = () => {
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.95 }}
-              className="text-gray-700 hover:text-primary-600 p-2 rounded-lg hover:bg-gray-100 transition-all duration-200 md:hidden"
+              className="text-gray-300 hover:text-white p-2 rounded-lg hover:bg-zinc-800 transition-all duration-200 md:hidden"
             >
               {isOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
             </motion.button>
@@ -204,7 +208,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/30 z-40 md:hidden"
+              className="fixed inset-0 bg-black/40 z-40 md:hidden"
             />
 
             {/* Sidebar */}
@@ -213,10 +217,10 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed left-0 top-0 h-full w-80 bg-gradient-to-br from-white to-gray-50 z-50 md:hidden shadow-2xl overflow-y-auto border-r border-gray-200"
+              className="fixed left-0 top-0 h-screen w-60 bg-gradient-to-br from-black to-zinc-900 z-50 md:hidden shadow-2xl overflow-y-auto border-r border-zinc-800"
             >
               {/* Sidebar Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <div className="flex items-center justify-between p-6 border-b border-gray-800">
                 <div className="flex items-center gap-3">
                   {/* <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-lg">V</span>
@@ -234,9 +238,9 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                  className="p-2 rounded-full hover:bg-gray-800 transition-colors"
                 >
-                  <HiX size={24} className="text-gray-600" />
+                  <HiX size={24} className="text-gray-300" />
                 </motion.button>
               </div>
 
@@ -254,9 +258,9 @@ const Navbar = () => {
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ x: 10, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex items-center w-full text-left p-4 rounded-xl hover:bg-primary-50 hover:border-primary-200 border-2 border-transparent transition-all duration-200 active:bg-primary-100"
+                    className="flex items-center w-full text-left p-4 rounded-xl hover:bg-zinc-800 hover:border-zinc-700 border-2 border-transparent transition-all duration-200 active:bg-zinc-700"
                   >
-                    <span className="text-gray-700 font-medium group-hover:text-primary-700 transition-colors">
+                    <span className="text-gray-300 font-medium group-hover:text-white transition-colors">
                       {item.name}
                     </span>
                   </motion.button>
@@ -264,8 +268,8 @@ const Navbar = () => {
               </div>
 
               {/* Quick Actions */}
-              <div className="p-6 border-t border-gray-200">
-                <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4">
+              <div className="p-6 border-t border-gray-800">
+                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
                   Quick Actions
                 </h3>
                 <div className="space-y-3">
@@ -274,7 +278,7 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex items-center gap-3 p-3 bg-gray-600 text-white rounded-xl hover:bg-gray-700 transition-colors"
+                    className="flex items-center gap-3 p-3 bg-gray-700 text-white rounded-xl hover:bg-gray-600 transition-colors"
                   >
                     <FaEnvelope size={18} />
                     <span className="font-medium">Get in Touch</span>
@@ -284,7 +288,7 @@ const Navbar = () => {
                     download
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex items-center gap-3 p-3 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors"
+                    className="flex items-center gap-3 p-3 bg-zinc-800 text-gray-200 rounded-xl hover:bg-zinc-700 transition-colors"
                   >
                     <FaDownload size={18} />
                     <span className="font-medium">Download Resume</span>
@@ -293,8 +297,8 @@ const Navbar = () => {
               </div>
 
               {/* Social Links */}
-              <div className="p-6 border-t border-gray-200">
-                <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4">
+              <div className="p-6 border-t border-gray-800">
+                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
                   Connect
                 </h3>
                 <div className="grid grid-cols-3 gap-3">
@@ -302,31 +306,31 @@ const Navbar = () => {
                     {
                       icon: FaGithub,
                       href: "https://github.com/pvraj1011",
-                      color: "bg-gray-800",
+                      color: "bg-zinc-800",
                       textColor: "text-white",
                     },
                     {
                       icon: FaLinkedin,
                       href: "https://linkedin.com/in/vraj10",
-                      color: "bg-blue-800",
+                      color: "bg-zinc-800",
                       textColor: "text-white",
                     },
                     {
                       icon: FaInstagram,
                       href: "https://instagram.com/v_i_r_u_1011",
-                      color: "bg-pink-600",
+                      color: "bg-zinc-800",
                       textColor: "text-white",
                     },
                     {
                       icon: SiCredly,
                       href: "https://credly.com/users/vraj10",
-                      color: "bg-orange-500",
+                      color: "bg-zinc-800",
                       textColor: "text-white",
                     },
                     {
                       icon: SiCoursera,
                       href: "https://coursera.org/learner/vraj10",
-                      color: "bg-blue-600",
+                      color: "bg-zinc-800",
                       textColor: "text-white",
                     },
                   ].map((social, index) => (
@@ -349,10 +353,10 @@ const Navbar = () => {
               </div>
 
               {/* Footer */}
-              <div className="relative bottom-0 left-0 right-0 p-6 border-t border-gray-200">
+              <div className="relative bottom-0 left-0 right-0 p-6 border-t border-gray-800">
                 <div className="text-center">
-                  <p className="text-xs text-gray-600">
-                    © {currentYear} Portfolio. Made with ❤️
+                  <p className="text-xs text-gray-400">
+                    © {currentYear} Vraj Patel. All rights reserved.
                   </p>
                 </div>
               </div>

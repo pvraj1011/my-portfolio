@@ -11,15 +11,10 @@ import {
   FaPython,
   FaGitAlt,
   FaDatabase,
-  FaCode,
-  FaRobot,
   FaGithub,
   FaChrome,
   FaBrain,
-  FaChartBar,
-  FaLaptopCode,
   FaNetworkWired,
-  FaChartLine,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -52,53 +47,53 @@ const Skills = () => {
       title: "Frontend Craftsmanship",
       icon: "🎨",
       skills: [
-        { name: "React", icon: FaReact, color: "text-blue-400" },
-        { name: "Next.js", icon: SiNextdotjs, color: "text-gray-300" },
-        { name: "JavaScript", icon: FaJs, color: "text-yellow-400" },
-        { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
-        { name: "HTML5", icon: FaHtml5, color: "text-orange-400" },
-        { name: "CSS3", icon: FaCss3Alt, color: "text-blue-400" },
-        { name: "Redux", icon: SiRedux, color: "text-purple-400" },
-        { name: "Vite", icon: SiVite, color: "text-cyan-400" },
+        { name: "React", icon: FaReact, color: "text-white" },
+        { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+        { name: "JavaScript", icon: FaJs, color: "text-white" },
+        { name: "TypeScript", icon: SiTypescript, color: "text-white" },
+        { name: "HTML5", icon: FaHtml5, color: "text-white" },
+        { name: "CSS3", icon: FaCss3Alt, color: "text-white" },
+        { name: "Redux", icon: SiRedux, color: "text-white" },
+        { name: "Vite", icon: SiVite, color: "text-white" },
       ],
     },
     {
       title: "Backend Engineering",
       icon: "⚙️",
       skills: [
-        { name: "Node.js", icon: FaNodeJs, color: "text-green-400" },
-        { name: "Express", icon: SiExpress, color: "text-gray-300" },
-        { name: "Python", icon: FaPython, color: "text-blue-400" },
-        { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
-        { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-500" },
-        { name: "SQL", icon: FaDatabase, color: "text-blue-600" },
+        { name: "Node.js", icon: FaNodeJs, color: "text-white" },
+        { name: "Express", icon: SiExpress, color: "text-white" },
+        { name: "Python", icon: FaPython, color: "text-white" },
+        { name: "MongoDB", icon: SiMongodb, color: "text-white" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "text-white" },
+        { name: "SQL", icon: FaDatabase, color: "text-white" },
       ],
     },
     {
       title: "AI & Data Science",
       icon: "🧠",
       skills: [
-        { name: "Machine Learning", icon: FaBrain, color: "text-orange-400" },
-        { name: "Deep Learning", icon: FaNetworkWired, color: "text-cyan-400" },
-        { name: "Scikit-learn", icon: SiScikitlearn, color: "text-orange-500" },
-        { name: "Pandas", icon: SiPandas, color: "text-green-600" },
-        { name: "NumPy", icon: SiNumpy, color: "text-blue-600" },
-        { name: "Matplotlib", icon: SiPlotly, color: "text-red-500" },
-        { name: "TensorFlow", icon: SiTensorflow, color: "text-orange-500" },
-        { name: "PyTorch", icon: SiPytorch, color: "text-red-500" },
+        { name: "Machine Learning", icon: FaBrain, color: "text-white" },
+        { name: "Deep Learning", icon: FaNetworkWired, color: "text-white" },
+        { name: "Scikit-learn", icon: SiScikitlearn, color: "text-white" },
+        { name: "Pandas", icon: SiPandas, color: "text-white" },
+        { name: "NumPy", icon: SiNumpy, color: "text-white" },
+        { name: "Matplotlib", icon: SiPlotly, color: "text-white" },
+        { name: "TensorFlow", icon: SiTensorflow, color: "text-white" },
+        { name: "PyTorch", icon: SiPytorch, color: "text-white" },
       ],
     },
     {
       title: "Development Arsenal",
       icon: "🛠️",
       skills: [
-        { name: "Git", icon: FaGitAlt, color: "text-orange-400" },
-        { name: "GitHub", icon: FaGithub, color: "text-gray-300" },
-        { name: "Postman", icon: SiPostman, color: "text-orange-500" },
-        { name: "VS Code", icon: SiVisualstudiocode, color: "text-blue-400" },
-        { name: "Jupyter", icon: SiJupyter, color: "text-orange-500" },
-        { name: "OpenAI API", icon: SiOpenai, color: "text-green-400" },
-        { name: "Chrome DevTools", icon: FaChrome, color: "text-blue-500" },
+        { name: "Git", icon: FaGitAlt, color: "text-white" },
+        { name: "GitHub", icon: FaGithub, color: "text-white" },
+        { name: "Postman", icon: SiPostman, color: "text-white" },
+        { name: "VS Code", icon: SiVisualstudiocode, color: "text-white" },
+        { name: "Jupyter", icon: SiJupyter, color: "text-white" },
+        { name: "OpenAI API", icon: SiOpenai, color: "text-white" },
+        { name: "Chrome DevTools", icon: FaChrome, color: "text-white" },
       ],
     },
   ];
@@ -150,13 +145,13 @@ const Skills = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-text mb-4"
+            className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
             Skills & <span className="gradient-text">Technologies</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-xl text-gray-400 max-w-3xl mx-auto"
           >
             A comprehensive toolkit for building modern, scalable, and efficient
             applications
@@ -174,14 +169,14 @@ const Skills = () => {
               key={category.title}
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200"
+              className="bg-zinc-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-zinc-800"
             >
               <div className="text-center mb-6">
                 <div className="text-4xl mb-3">{category.icon}</div>
-                <h3 className="text-2xl font-bold text-text mb-2">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   {category.title}
                 </h3>
-                <div className="w-16 h-1 bg-gradient-to-r from-primary-600 to-secondary-500 mx-auto rounded-full"></div>
+                <div className="w-16 h-1 bg-gradient-to-r from-white to-white/50 mx-auto rounded-full"></div>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -199,12 +194,12 @@ const Skills = () => {
                       duration: 0.5,
                     }}
                     whileHover={{ scale: 1.05, y: -3 }}
-                    className="group relative bg-gray-50 rounded-lg p-1 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 cursor-pointer aspect-square"
+                    className="group relative bg-zinc-800 rounded-lg p-1 shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-700 cursor-pointer aspect-square"
                     title={skill.name}
                   >
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 10 }}
-                      className={`${skill.color} transition-transform duration-200 w-full h-full rounded-lg bg-white flex items-center justify-center`}
+                      className={`${skill.color} transition-transform duration-200 w-full h-full rounded-lg bg-black flex items-center justify-center`}
                     >
                       <skill.icon size={40} />
                     </motion.div>
@@ -228,7 +223,7 @@ const Skills = () => {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-bold text-text mb-8">
+          <h3 className="text-2xl font-bold text-white mb-8">
             Additional Expertise
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
@@ -238,11 +233,11 @@ const Skills = () => {
               "Responsive Design",
               "Performance Optimization",
               "Algorithm Design",
-              "Data Analysis",
+              // "Data Analysis",
               "Model Training",
               "Database Design",
               "Version Control",
-              "Testing & Debugging",
+              // "Testing & Debugging",
               "Problem Solving",
               "Full-Stack Development",
             ].map((skill, index) => (
@@ -254,7 +249,7 @@ const Skills = () => {
                 }
                 transition={{ delay: 0.9 + index * 0.05, duration: 0.3 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="bg-primary-500/10 text-primary-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-500/20 transition-colors duration-200 border border-primary-500/20"
+                className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white/20 transition-colors duration-200 border border-white/20"
               >
                 {skill}
               </motion.span>

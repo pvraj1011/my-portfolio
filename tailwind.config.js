@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -44,8 +45,8 @@ module.exports = {
           800: '#166534',
           900: '#14532d',
         },
-        background: '#f3f4f6',
-        text: '#111827'
+        background: '#000000',
+        text: '#e5e7eb'
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
