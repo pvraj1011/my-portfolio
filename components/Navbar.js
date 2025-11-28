@@ -284,7 +284,7 @@ const Navbar = () => {
                     <span className="font-medium">Get in Touch</span>
                   </motion.a>
                   <motion.a
-                    href="https://drive.google.com/uc?export=download&id=12X0FONY503sjIoBASmnQsXkuDOPzDrx-"
+                    href="https://drive.google.com/uc?export=download&id=117nobHDHVumNs_4Glr2zoN3xI9QYBZD7"
                     download
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
